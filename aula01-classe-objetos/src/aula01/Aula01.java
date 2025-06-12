@@ -4,16 +4,18 @@ import javax.swing.plaf.basic.BasicArrowButton;
 
 public class Aula01 {
     public static void main(String[] args) {
-        Carro car1=new Carro();
-        car1.marca = "Toyta";
-        car1.modelo = "Corola";
-        car1.cor = "Preto";
-        car1.ano = 2008;
-        car1.potencia = 140;
-
-        System.out.println("Marca:" + car1.marca);
-        car1.ligar();
-        car1.desligar();
-
+        Conta conta1 = new Conta();
+        conta1.titulo = "Samuel";
+        conta1.numero_conta = 23156;
+        conta1.saldo = 0.00;
+        System.out.println("Cliente: " + conta1.titulo);
+        System.out.println("Numero da conta:" + conta1.numero_conta);
+        System.out.println("Saldo da conta R$" + conta1.saldo);
+        conta1.consultar();
+        conta1.sacar();
+        conta1.depositar();
+        conta1.consultar();
+        conta1.depositar();
+        conta1.sacar();
     }
 }
