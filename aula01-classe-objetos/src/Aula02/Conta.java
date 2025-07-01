@@ -4,15 +4,35 @@ public class Conta {
     private String nomeTitular;
     private Integer numeroConta;
     private Double saldo;
+    private Boolean contaAtiva;
 
     public Conta(String nomeTitular, Integer numeroConta, Double saldo){
         this.nomeTitular = nomeTitular;
         this.numeroConta = numeroConta;
         this.saldo = saldo;
+        this.contaAtiva = true;
+    }
+
+    public void exibir(){
+        System.out.println("======== Cliente========");
+        System.out.println("Nome: " + this.nomeTitular);
+        System.out.println("Nome da conta: " + this.numeroConta);
+        System.out.println("Conta está ativa? " + this.contaAtiva);
+        System.out.println("========================");
+    }
+
+    public void ativarConta(){
+        this.contaAtiva=true;
+    }
+
+    public void desativarConta(){
+        this.contaAtiva = false;
     }
 
     public void consultarSaldo(){
-        System.out.printf("saldo da conta: R$ %.2f \n", this.saldo);
+        if (this.contaAtiva){
+            System.out.printf("Saldo da conta: R$%.2f \n", this.saldo);
+        }
     }
 
     public void depositar(Double valor){
